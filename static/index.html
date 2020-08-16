@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+    <div id='app'>
+        <p>
+            <button v-on:click="getData">连接</button>
+        </p>
+        
+        <p>{{count}}</p>
+        <table border="1">
+            <tr>
+                <th>文件类型</th>
+                <th>文件名</th>
+                <th>文件大小</th>
+                <th>文件修改时间</th>
+            </tr>
+            {{msg}}
+            <tr v-for = 'item in info' :key = 'item.time'>
+                <td>{{item.type}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.size}}</td>
+                <td>{{item.time}}</td>
+            </tr>
+        </table>
+        
+    </div>
+</body>
+</html>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+    var app = new Vue({
+        el : "#app",
+        data: {
+            count : 0,
+            msg : "hello world",
+            info : []
+            // return{
+            //     msg : "hello world",
+            //     info : []
+            // }
+            
+        },
+        methods: {
+            getData() {
+                console.log("1");
+                axios.get('http://127.0.0.1:3000/hh').then(response =>{
+                    this.info = response.data;
+                })
+                // axios.post('http://127.0.0.1:8080/').then(response =>{
+                //     this.info = response;
+                //     console.log(response);
+                // })
+                
+            }
+        }
+    })
+</script>
+<style>
+    *{
+        font-size: 20px;
+    }
+    table{
+        text-align: left;
+        border-collapse: collapse;
+    }
+    table td{
+        border:1px solid rgb(34, 145, 173); 
+        padding: 6px;
+    }
+
+</style>

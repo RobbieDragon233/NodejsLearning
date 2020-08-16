@@ -1,0 +1,12 @@
+[
+{
+	"row":"0",
+	"column":"0",
+	"type":"tank"
+},
+{
+	"row":"49",
+	"column":"49",
+	"type":"soldier"
+}
+]
