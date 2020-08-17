@@ -1,0 +1,28 @@
+[
+	{
+		"row" : 3,
+		"column" : 2,
+		"type" : "soldier"
+	},
+	{
+		"row" : 4,
+		"column" : 4,
+		"type" : "chariots"
+	},
+	{
+		"row" : 5,
+		"column" : 7,
+		"type" : "tank"
+	},
+	{
+		"row" : 8,
+		"column" : 1,
+		"type" : "commander"
+	},
+	{
+		"row" : 4,
+		"column" : 1,
+		"type" : "commander"
+	}
+]
+
